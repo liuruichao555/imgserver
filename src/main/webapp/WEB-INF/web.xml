@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <filter>
+        <filter-name>encoding</filter-name>
+        <filter-class>com.liuruichao.img.filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>encoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>uploadimg</servlet-name>
+        <servlet-class>com.liuruichao.img.servlet.UploadImgServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>uploadimg</servlet-name>
+        <url-pattern>/upload/img</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>*</error-code>
+        <location>/WEB-INF/web/errors/404.jsp</location>
+    </error-page>
+</web-app>
